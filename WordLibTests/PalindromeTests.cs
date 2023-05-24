@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordLib;
 
 namespace WordLibTests
@@ -8,22 +9,29 @@ namespace WordLibTests
         [TestMethod]
         public void TestMethod1()
         {
-            string result = WordLib.Palindrome.Something();
+            string result = Palindrome.Something();
             Assert.AreEqual("something", result);
         }
 
         [TestMethod]
         public void TestPalindromeTrue()
         {
-            bool result = WordLib.Palindrome.IsPalindrome("abba");
+            bool result = Palindrome.IsPalindrome("abba");
             Assert.AreEqual(true, result);
         }
 
         [TestMethod]
         public void TestPalindromeFalse()
         {
-            bool result = WordLib.Palindrome.IsPalindrome("palindrome");
+            bool result = Palindrome.IsPalindrome("palindrome");
             Assert.AreEqual(false, result);
+        }
+
+        [TestMethod()]
+        public void ExceptionTestPalidrome_ThrowExceptionWithEmptyString()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => Palindrome.IsPalindrome(string.Empty));
+            Assert.ThrowsException<ArgumentNullException>(() => Palindrome.IsPalindrome(null));
         }
     }
 }

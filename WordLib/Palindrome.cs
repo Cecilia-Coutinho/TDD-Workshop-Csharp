@@ -18,6 +18,12 @@
 
         static bool IsPalindromeChecker(string stringToCheck)
         {
+
+            if (stringToCheck == null || stringToCheck == string.Empty)
+            {
+                throw new ArgumentNullException(nameof(stringToCheck));
+            }
+
             char[] chars = stringToCheck.ToCharArray();
             Array.Reverse(chars);
             string reverse = new(chars);
