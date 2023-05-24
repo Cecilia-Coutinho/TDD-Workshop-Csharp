@@ -11,5 +11,19 @@ namespace WordLibTests
             string result = WordLib.Palindrome.Something();
             Assert.AreEqual("something", result);
         }
+
+        [TestMethod]
+        public void TestPalindromeTrue()
+        {
+            bool result = WordLib.Palindrome.IsPalindrome("abba");
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void TestPalindromeFalse()
+        {
+            bool result = WordLib.Palindrome.IsPalindrome("palindrome");
+            Assert.AreEqual(false, result);
+        }
     }
 }
