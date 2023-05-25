@@ -30,5 +30,18 @@
 
             return stringToCheck.Equals(reverse, StringComparison.OrdinalIgnoreCase);
         }
+
+        public static int LettersCounter(string strToCount)
+        {
+            int counter = 0;
+            foreach (char c in strToCount)
+            {
+                if (char.IsLetter(c))
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
     }
 }
